@@ -1,11 +1,13 @@
 {
   "name": "inertiajs-use-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React hook for calling JSON API endpoints from Inertia.js apps, with optional piping of responses into Inertia page props.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "repository": {"url": "https://github.com/offload-project/inertiajs-use-api"},
+  "repository": {
+    "url": "https://github.com/offload-project/inertiajs-use-api"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

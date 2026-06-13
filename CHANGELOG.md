@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.0.1 - 2026-06-13
+
+### Changed
+- Add missing repo url for provenance gen [#4](https://github.com/offload-project/inertiajs-use-api/pull/4)
+
 ## v1.0.0 - 2026-06-13
 
 ### Changed

@@ -5,6 +5,7 @@ on:
     types: [ closed ]
 
 permissions:
+  id-token: write
   contents: write
   pull-requests: write
 
@@ -21,6 +22,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '24'
+          package-manager-cache: false
 
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2
@@ -56,14 +58,10 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Install Dependencies
-        run: bun install
-
       - uses: offload-project/release-champion@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           draft-release: false
           publish-npm: true
-          npm-token: ${{ secrets.NPM_WRITE }}
           npm-registry: 'https://registry.npmjs.org'
           npm-build-command: 'bun run build'

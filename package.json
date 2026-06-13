@@ -1,6 +1,6 @@
 {
   "name": "inertiajs-use-api",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A React hook for calling JSON API endpoints from Inertia.js apps, with optional piping of responses into Inertia page props.",
   "type": "module",
   "main": "./dist/index.js",

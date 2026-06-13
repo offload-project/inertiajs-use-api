@@ -1,7 +1,7 @@
-<p align="center">
-    <a href="https://packagist.org/packages/offload-project/inertiajs-use-api"><img src="https://img.shields.io/packagist/v/offload-project/inertiajs-use-api.svg?style=flat-square" alt="Latest Version on Packagist"></a>
-    <a href="https://github.com/offload-project/inertiajs-use-api/actions"><img src="https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/tests.yml?branch=main&style=flat-square" alt="GitHub Tests Action Status"></a>
-    <a href="https://packagist.org/packages/offload-project/inertiajs-use-api"><img src="https://img.shields.io/packagist/dt/offload-project/inertiajs-use-api.svg?style=flat-square" alt="Total Downloads"></a>
+<p style="text-align:center;">
+    <img src="https://img.shields.io/github/package-json/v/offload-project/inertiajs-use-api" alt="version">
+    <img alt="GitHub Actions Release Workflow Status" src="https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/release.yml?label=Build">
+    <img alt="GitHub Actions Test Workflow Status" src="https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/test.yml?label=Test">
 </p>
 
 # inertiajs-use-api

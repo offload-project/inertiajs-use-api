@@ -1,6 +1,6 @@
 # inertiajs-use-api
 
-[![Latest Version on NPM](https://img.shields.io/github/package-json/v/offload-project/inertiajs-use-api?style=flat-square)](https://packagist.org/packages/inertiajs-use-api)
+[![Latest Version on NPM](https://img.shields.io/github/package-json/v/offload-project/inertiajs-use-api?label=npm&style=flat-square)](https://packagist.org/packages/inertiajs-use-api)
 [![Tests](https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/test.yml?branch=main&label=tests&style=flat-square)](https://github.com/inertiajs-use-api/actions/workflows/test.yml)
 [![Build](https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/release.yml?label=build&style=flat-square)](https://github.com/inertiajs-use-api/actions/workflows/release.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE.md)

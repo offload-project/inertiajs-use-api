@@ -1,10 +1,10 @@
-<p align="center">
-    <a href="https://www.npmjs.com/package/inertiajs-use-api"><img src="https://img.shields.io/github/package-json/v/offload-project/inertiajs-use-api?style=flat-square" alt="Latest Version on npm"></a>
-    <a href="https://github.com/offload-project/inertiajs-use-api/actions"><img src="https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/test.yml?branch=main&style=flat-square&label=Tests" alt="GitHub Tests Action Status"></a>
-    <a href="https://github.com/offload-project/inertiajs-use-api/actions"><img src="https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/release.yml?style=flat-square&label=Build" alt="GitHub Build Action Status"></a>
-</p>
-
 # inertiajs-use-api
+
+[![Latest Version on NPM](https://img.shields.io/github/package-json/v/offload-project/inertiajs-use-api?style=flat-square)](https://packagist.org/packages/inertiajs-use-api)
+[![Tests](https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/test.yml?branch=main&label=tests&style=flat-square)](https://github.com/inertiajs-use-api/actions/workflows/test.yml)
+[![Build](https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/release.yml?label=build&style=flat-square)](https://github.com/inertiajs-use-api/actions/workflows/release.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE.md)
+
 
 A React hook for calling JSON API endpoints from [Inertia.js](https://inertiajs.com) apps. Like Inertia's `useForm`, but for plain JSON routes — with optional piping of responses back into Inertia page props.
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.2 - 2026-06-14
+
+### Documentation
+- Add missing license, update README [#6](https://github.com/offload-project/inertiajs-use-api/pull/6)
+- Update badges ([c1d6204](https://github.com/offload-project/inertiajs-use-api/commit/c1d62043bb30e657a6f769734d5feeeb42014e7b))
+
 ## v1.0.1 - 2026-06-13
 
 ### Changed

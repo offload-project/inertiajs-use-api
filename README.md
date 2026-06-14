@@ -1,7 +1,7 @@
-<p style="text-align:center;">
-    <img src="https://img.shields.io/github/package-json/v/offload-project/inertiajs-use-api" alt="version">
-    <img alt="GitHub Actions Release Workflow Status" src="https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/release.yml?label=Build">
-    <img alt="GitHub Actions Test Workflow Status" src="https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/test.yml?label=Test">
+<p align="center">
+    <a href="https://www.npmjs.com/package/inertiajs-use-api"><img src="https://img.shields.io/github/package-json/v/offload-project/inertiajs-use-api?style=flat-square" alt="Latest Version on npm"></a>
+    <a href="https://github.com/offload-project/inertiajs-use-api/actions"><img src="https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/test.yml?branch=main&style=flat-square&label=Tests" alt="GitHub Tests Action Status"></a>
+    <a href="https://github.com/offload-project/inertiajs-use-api/actions"><img src="https://img.shields.io/github/actions/workflow/status/offload-project/inertiajs-use-api/release.yml?style=flat-square&label=Build" alt="GitHub Build Action Status"></a>
 </p>
 
 # inertiajs-use-api
@@ -18,24 +18,45 @@ await api.get("/api/users", { intoProp: "users" });
 await api.post("/users", { reloadProps: ["users", "stats"] });
 ```
 
-## Why
+## Features
 
-Inertia's built-in `router` and `useForm` are great for navigating between Inertia pages, but they expect Inertia responses. For plain JSON API routes (`/api/*`), you typically drop down to `fetch` and lose the ergonomics — processing flag, field errors, abort, lifecycle callbacks, etc.
+- **`useForm`-style ergonomics** — `data`, `errors`, `processing`, `cancel`, and lifecycle callbacks for plain JSON routes
+- **Inertia prop integration** — pipe responses into `page.props` client-side (`intoProp`) or trigger a partial reload (`reloadProps`)
+- **Pluggable error parsing** — adapt any backend's validation envelope into a flat `{ field: message }` map
+- **Pluggable toast hooks** — wire your notification system once at boot
+- **XSRF out of the box** — reads Laravel's `XSRF-TOKEN` cookie by default, fully overridable
+- **AbortSignal-aware** — cancel a single call or all in-flight requests for the hook
+- **Zero runtime dependencies** — native `fetch` under the hood, only `react` and `@inertiajs/core` as peers
+- **Strongly typed** — generic over form shape and response shape
 
-`useApi` gives you that ergonomics back, and lets you pipe responses into Inertia page props when you want them to live in `usePage()` alongside server-rendered data.
+## Table of Contents
 
-## Install
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Inertia Prop Integration](#inertia-prop-integration)
+    - [`intoProp` — client-side write](#intoprop--write-the-response-into-pageprops-client-side)
+    - [`reloadProps` — server roundtrip](#reloadprops--refresh-props-from-the-server)
+    - [Choosing between them](#choosing-between-them)
+- [Configuration](#configuration)
+- [API Reference](#api-reference)
+- [AI Coding Assistant Skill](#ai-coding-assistant-skill)
+- [Contributing](#contributing)
+- [Security](#security)
+- [License](#license)
+
+## Requirements
+
+- React 18 or 19
+- `@inertiajs/core` 2 or 3
+
+## Installation
 
 ```sh
 npm install inertiajs-use-api
 ```
 
-Peer dependencies:
-
-- `@inertiajs/core@^2 || ^3`
-- `react@^18 || ^19`
-
-## Quick start
+## Quick Start
 
 ```tsx
 import { useApi } from "inertiajs-use-api";
@@ -72,7 +93,13 @@ function CreateUserForm() {
 }
 ```
 
-## Inertia prop integration
+## Why
+
+Inertia's built-in `router` and `useForm` are great for navigating between Inertia pages, but they expect Inertia responses. For plain JSON API routes (`/api/*`), you typically drop down to `fetch` and lose the ergonomics — processing flag, field errors, abort, lifecycle callbacks, etc.
+
+`useApi` gives you that ergonomics back, and lets you pipe responses into Inertia page props when you want them to live in `usePage()` alongside server-rendered data.
+
+## Inertia Prop Integration
 
 ### `intoProp` — write the response into `page.props` client-side
 
@@ -178,7 +205,7 @@ configureUseApi({
 | `onErrorToast`   | `(toast: unknown) => void`                 | no-op                     |
 | `onResponse`     | `(body, status, ok) => void`               | no-op                     |
 
-## API
+## API Reference
 
 ### `useApi<TForm, TResponse>(initialData?)`
 
@@ -234,13 +261,13 @@ try {
 }
 ```
 
-## Notes
+### Notes
 
 - The hook uses native `fetch` and reads/writes Inertia state only when you ask it to (`intoProp`, `reloadProps`).
 - `@inertiajs/react` is **not** a peer dep — only `@inertiajs/core` is. Use whichever Inertia adapter your app uses to read updated props.
 - All in-flight requests for a given hook share `processing` and can be cancelled together via `cancel()`.
 
-## For AI agents
+## AI Coding Assistant Skill
 
 This package ships an [Anthropic Skill](https://docs.claude.com/en/docs/agents-and-tools/skills) at the package root so coding agents (Claude Code, Claude.ai) can use the library correctly without needing to grep through source.
 
@@ -261,6 +288,17 @@ ln -s "$PWD/node_modules/inertiajs-use-api/SKILL.md" ~/.claude/skills/inertiajs-
 
 Contributors hacking on the library itself should read [`AGENTS.md`](./AGENTS.md) — picked up automatically by Cursor, Windsurf, Cline, and similar in-repo agents.
 
+## Contributing
+
+Contributions are welcome! Please see the documents below before getting started.
+
+- [Contributing Guide](CONTRIBUTING.md) — setup, workflow, commit conventions, and PR process
+- [Code of Conduct](CODE_OF_CONDUCT.md) — expectations for participation in this project
+
+## Security
+
+- [Security Policy](SECURITY.md) — how to report a vulnerability privately
+
 ## License
 
-MIT
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
